@@ -3,15 +3,21 @@ body {
     margin: 0;
     padding: 0;
 }
-p{
-    font-weight: bold;
+.BlogTx{
     color: white;
 }
 .blogT{
     color: white;
 }
 .BlogP{
-    width: fit-content;
-    height: auto;
-    background-color: black;
+    width: 150px;
+    height: 300px;
+    background-color: rebeccapurple;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+.BlogSec{
+    display: flex;
+    flex-wrap: wrap-reverse;
+    justify-content: space-around;
 }
