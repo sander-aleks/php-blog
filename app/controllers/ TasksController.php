@@ -17,10 +17,14 @@ class TasksController {
     public function store () {
 
         App::get('database')->insert('tasks', [
+            'title' => $_POST['title'],
             'description' => $_POST['description'],
+            'time' => $_POST['time'],
+            'name' => $_POST['name'],
         ]);
         
         return redirect('tasks');
+
     }
 
 }

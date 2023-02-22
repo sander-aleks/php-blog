@@ -1,3 +1,17 @@
 body {
     background: #C0C0C0;
+    margin: 0;
+    padding: 0;
+}
+p{
+    font-weight: bold;
+    color: white;
+}
+.blogT{
+    color: white;
+}
+.BlogP{
+    width: fit-content;
+    height: auto;
+    background-color: black;
 }
