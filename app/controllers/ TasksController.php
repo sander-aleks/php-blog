@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Core\App;
+use PDO;
 
 class TasksController {
 
@@ -22,9 +23,24 @@ class TasksController {
             'time' => $_POST['time'],
             'name' => $_POST['name'],
         ]);
-        
+        return redirect('tasks');
+    }
+
+    public function delete(){
+        $id=$_POST['id'];
+
+        App::get('database')->delete('tasks', $id);
         return redirect('tasks');
 
     }
 
+    public function update(){
+        $id=$_POST['id'];
+        $textupdate=$_POST['textupdate'];
+        App::get('database')->update('tasks','text', "$textupdate" ,"id = $id",);
+        
+        App::get('database')->update('tasks','modifyed', "1" ,"id = $id",);
+
+
+    }
 }

@@ -7,4 +7,5 @@ $router->get('tasks', 'TasksController@index');
 $router->get('blogs', 'BlogController@blog');
 
 $router->post('task', 'TasksController@store');
-$router->post('blog', 'BlogController@blogs');
+$router->post('delete','TasksController@delete');
+$router->post('modify','TasksController@update');
