@@ -26,21 +26,22 @@ class TasksController {
         return redirect('tasks');
     }
 
+   
     public function delete(){
         $id=$_POST['id'];
 
-        App::get('database')->delete('tasks', $id);
-        return redirect('tasks');
-
+        App::get('database')->delete('tasks',"id = $id");
+        header('Location: /tasks');
     }
+
 
     public function update(){
         $id=$_POST['id'];
         $textupdate=$_POST['textupdate'];
-        App::get('database')->update('tasks','text', "$textupdate" ,"id = $id",);
+        App::get('database')->update('tasks','description', "$textupdate" ,"id = $id",);
         
-        App::get('database')->update('tasks','modifyed', "1" ,"id = $id",);
+        App::get('database')->update('tasks','modified', "1" ,"id = $id",);
 
-
+        header('Location: /tasks');
     }
 }

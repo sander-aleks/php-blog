@@ -22,4 +22,9 @@ class PagesController {
         
     }
 
+    public function add () {
+
+        return view('add');
+        
+    }
 }

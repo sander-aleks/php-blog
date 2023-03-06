@@ -1,8 +1,9 @@
 <nav>
     <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/contact">Contact</a></li>
-        <li><a href="/tasks">Blogi</a></li>
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+        <a href="/tasks">Blogi</a>
+        <a href="/add">Add</a>
     </ul>
 </nav>
