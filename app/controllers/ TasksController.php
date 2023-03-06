@@ -35,13 +35,17 @@ class TasksController {
     }
 
 
-    public function update(){
+    public function edit(){
         $id=$_POST['id'];
-        $textupdate=$_POST['textupdate'];
-        App::get('database')->update('tasks','description', "$textupdate" ,"id = $id",);
+        $title=$_POST['title'];
+        $description=$_POST['description'];
+        $name=$_POST['name'];
+        App::get('database')->update('tasks','title', "$title" ,"id = $id",);
+        App::get('database')->update('tasks','description', "$description" ,"id = $id",);
+        App::get('database')->update('tasks','name', "$name" ,"id = $id",);
         
-        App::get('database')->update('tasks','modified', "1" ,"id = $id",);
 
-        header('Location: /tasks');
+        return redirect('tasks');
     }
+    
 }

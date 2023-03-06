@@ -38,11 +38,12 @@ class QueryBuilder {
         }
 
     }
-    public function delete ($table ,$parameters){
+    public function delete ($table, $parameters){
         $stmt = $this->pdo->prepare("DELETE FROM {$table} WHERE {$parameters}");
         
         $stmt -> execute();
     }
+
     public function update ($table,$column,$value,$parameters){
         $stmt = $this->pdo->prepare("UPDATE {$table} SET {$column} = '{$value}' WHERE {$parameters}");
         

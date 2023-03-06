@@ -27,4 +27,9 @@ class PagesController {
         return view('add');
         
     }
+
+    public function edit () {
+        
+        return view ('edit');
+    }
 }

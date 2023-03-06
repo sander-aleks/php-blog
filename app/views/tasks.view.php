@@ -22,41 +22,23 @@
                         <p class="BlogTx"><?= $task->name; ?></p>
                         <?php endif; ?>
                 </p>
-               
-        <form id="edditform<?=$task->id ?>" method="POST" action="/edit" >
-            <input type="hidden"value="<?= $task->id;?>" name="id">
-            
-            <input type="submit"value="Edit">
-        </form>
-
-        <form method="POST" action="/delete">
-            <input type="hidden"value="<?= $task->id;?>" name="id">
-            <input type="submit" value="Delete" >
-        </form>
+               <div class="EDbuttons">
+                <form id="edditform<?=$task->id ?>" method="POST" action="/edit">
+                    <input type="hidden" value="<?= $task->id;?>" name="id">
+                    <input type="hidden" value="<?= $task->title;?>" name="title">
+                    <input type="hidden" value="<?= $task->description;?>" name="description">
+                    <input type="hidden" value="<?= $task->name;?>" name="name">
+                    <input type="submit"value="Edit">
+                </form>
+                    <form method="POST" action="/delete">
+                            <input type="hidden"value="<?= $task->id;?>" name="id">
+                            <input type="submit" value="Delete" >
+                    </form>
+               </div>
+           
             
             </div>    
         <?php endforeach; ?>
-    </div>
+</div>
 
-    <script>
-    function edditfunction(id){
-       var tasks = document.getElementById('edditform'+id);
-       if (tasks.style.display === "none") {
-        tasks.style.display = "block";
-        } 
-        else {
-            tasks.style.display = "none";
-        }
-
-
-        var tasks2 = document.getElementById('info'+id);
-        if (tasks2.style.display === "none") {
-        tasks2.style.display = "block";
-        } 
-        else {
-            tasks2.style.display = "none";
-        }
-    }
-
-</script>
 <?php require_once('partials/footer.php'); ?>
